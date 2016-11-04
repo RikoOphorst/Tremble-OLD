@@ -10,69 +10,19 @@ using namespace engine;
 class PointLightController : public Component
 {
 public:
-	PointLightController()
-	{
-
-	}
-
 	void Update()
 	{
-		SGNode* node = GetNode();
-		Light* light = node->FindComponent<Light>();
+		Light* light = GetNode()->FindComponent<Light>();
 
 		if (light != nullptr)
-		{
 			light->SetPosition(Vector4(sinf(static_cast<float>(Get::TimeSinceStartup())) * 60.0f, 3.0f, 0.0f));
-		}
 	}
-};
-
-class SpotLightController : public Component
-{
-public:
-	SpotLightController()
-	{
-
-	}
-
-	void Update()
-	{
-		SGNode* node = GetNode();
-		Light* light = node->FindComponent<Light>();
-
-		if (light != nullptr)
-		{
-			Vector3 dir = light->GetDirection();
-
-			dir.SetZ(Scalar(std::sin(Get::TimeSinceStartup())));
-
-			Get::Renderer()->RenderDebugVolume(DebugVolume::CreateRay(light->GetPosition(), dir));
-
-			light->SetDirection(dir);
-		}
-
-		if (GetKeyState('N') & 0x8000)
-		{
-			angle += 0.001f;
-		}
-
-		if (GetKeyState('M') & 0x8000)
-		{
-			angle -= 0.001f;
-		}
-
-		light->SetCosCone(Scalar(angle));
-
-		//std::cout << angle << std::endl;
-	}
-
-	float angle = 1.04299f;
 };
 
 SGNode* AddPhysicsBox(Vector3 position, Vector3 size = Vector3(1, 1, 1), Vector3 rotation = Vector3(), bool is_static = false)
 {
 	SGNode* box = Get::Scene()->AddChild(is_static, position, rotation, size);
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box, is_static);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box, is_static);
 	if (is_static)
 	{
 		box->AddComponent<RigidbodyStatic>(size / 2);
@@ -97,7 +47,7 @@ void CheckRotations()
 	box1->RotateXDegrees(Scalar(45));
 	box1->RotateYDegrees(Scalar(45));
 	box1->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box1, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box1, false);
 	box1->SetPosition(Vector3(-2, 0, 0));
 	box1->AddComponent<Rotate>(1, 0, 0);
 
@@ -105,7 +55,7 @@ void CheckRotations()
 	box2->RotateXDegrees(Scalar(45));
 	box2->RotateYDegrees(Scalar(45));
 	box2->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box2, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box2, false);
 	box2->SetPosition(Vector3(0, 0, 0));
 	box2->AddComponent<Rotate>(0, 1, 0);
 
@@ -113,7 +63,7 @@ void CheckRotations()
 	box3->RotateXDegrees(Scalar(45));
 	box3->RotateYDegrees(Scalar(45));
 	box3->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box3, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box3, false);
 	box3->SetPosition(Vector3(2, 0, 0));
 	box3->AddComponent<Rotate>(0, 0, 1);
 
@@ -121,7 +71,7 @@ void CheckRotations()
 	box1_2->RotateXDegrees(Scalar(45));
 	box1_2->RotateYDegrees(Scalar(45));
 	box1_2->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box1_2, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box1_2, false);
 	box1_2->SetPosition(Vector3(-2, 0, 2));
 	box1_2->AddComponent<Rotate2>(1, 0, 0);
 
@@ -129,7 +79,7 @@ void CheckRotations()
 	box2_2->RotateXDegrees(Scalar(45));
 	box2_2->RotateYDegrees(Scalar(45));
 	box2_2->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box2_2, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box2_2, false);
 	box2_2->SetPosition(Vector3(0, 0, 2));
 	box2_2->AddComponent<Rotate2>(0, 1, 0);
 
@@ -137,7 +87,7 @@ void CheckRotations()
 	box3_2->RotateXDegrees(Scalar(45));
 	box3_2->RotateYDegrees(Scalar(45));
 	box3_2->RotateZDegrees(Scalar(45));
-	FBXLoader::LoadFBXScene("../../models/cube_textured.fbx", box3_2, false);
+	FBXLoader::LoadFBXScene("../../models/cube_textured/cube_textured.fbx", box3_2, false);
 	box3_2->SetPosition(Vector3(2, 0, 2));
 	box3_2->AddComponent<Rotate2>(0, 0, 1);
 }
@@ -175,9 +125,6 @@ int main(int argc, char* argv)
 	{
 		Flying* flying = player->AddComponent<Flying>();
 	}
-
-
-
 
 	camera->SetFOV(60.0f * 0.0174533f);
 

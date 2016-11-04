@@ -145,7 +145,6 @@
     <ClInclude Include="core\get.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="engine_include.h" />
     <ClInclude Include="core\math\imat44.h">
       <Filter>core\math</Filter>
     </ClInclude>
@@ -282,6 +281,7 @@
       <Filter>core\config\design</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="engine_include.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\game_manager.cc">
@@ -553,29 +553,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="..\bin\shaders\lights.hlsl">
+    <FxCompile Include="shaders\default_ps.hlsl">
       <Filter>shaders</Filter>
     </FxCompile>
-    <FxCompile Include="..\bin\shaders\material.hlsl">
+    <FxCompile Include="shaders\default_vs.hlsl">
       <Filter>shaders</Filter>
     </FxCompile>
-    <FxCompile Include="..\bin\shaders\samplers.hlsl">
+    <FxCompile Include="shaders\debug_default_vs.hlsl">
       <Filter>shaders</Filter>
     </FxCompile>
-    <FxCompile Include="..\bin\shaders\test_shader.hlsl">
+    <FxCompile Include="shaders\debug_default_ps.hlsl">
       <Filter>shaders</Filter>
     </FxCompile>
-    <FxCompile Include="..\bin\shaders\vertex_data.hlsl">
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\cbuffers.hlsli">
       <Filter>shaders</Filter>
-    </FxCompile>
-    <FxCompile Include="..\bin\shaders\cbuffers.hlsl">
+    </None>
+    <None Include="shaders\lighting.hlsli">
       <Filter>shaders</Filter>
-    </FxCompile>
-    <FxCompile Include="..\bin\shaders\debug_shader.hlsl">
+    </None>
+    <None Include="shaders\lights.hlsli">
       <Filter>shaders</Filter>
-    </FxCompile>
-    <FxCompile Include="..\bin\shaders\lighting.hlsl">
+    </None>
+    <None Include="shaders\material.hlsli">
       <Filter>shaders</Filter>
-    </FxCompile>
+    </None>
+    <None Include="shaders\vertex_data.hlsli">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\samplers.hlsli">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -66,8 +66,7 @@ namespace engine
 		const Device& GetDevice() const; //!< Get the underlying device
 		
 		DescriptorHeap& GetRtvHeap() { return rtv_heap_; }
-		DescriptorHeap& GetDsvHeap() { return dsv_heap_; 
-		}
+		DescriptorHeap& GetDsvHeap() { return dsv_heap_; }
 		DescriptorHeap& GetCbvSrvUavHeap() { return cbv_srv_uav_heap_; }
 		DescriptorHeap& GetSamplerHeap() { return sampler_heap_; }
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma warning(disable:4099) // disable "no pdf was found with linked library"
-#pragma message("precompiling")
+#pragma message("precompiling engine pch")
 
 #include <cstdio>
 #include <cstdarg>

@@ -88,9 +88,9 @@ namespace engine
 		float comeback_angle_ = 0;
 		float vertical_angle_ = 0; //!< Vertical angle of the look of the player(in radians)
 		Scalar camera_pitch = 0;
-		float keys_rotation_speed_ = 0.02;
-		float horizontal_mouse_rotation_speed_ = 0.005;
-		float vertical_mouse_rotation_speed_ = 0.003;
+		float keys_rotation_speed_ = 0.02f;
+		float horizontal_mouse_rotation_speed_ = 0.005f;
+		float vertical_mouse_rotation_speed_ = 0.003f;
 		float movement_speed_ = 6;
 		CharacterController* character_controller_;
 		RaycastShootDynamics* shoot_dynamics_;

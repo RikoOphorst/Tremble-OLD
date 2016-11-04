@@ -103,6 +103,7 @@
       <AdditionalDependencies>$(SolutionDir)bin\x64\Debug\engine.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3d12.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\dxgi.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\dxguid.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3dcompiler.lib;libfbxsdk.lib;PhysX3DEBUG_x64.lib;PhysX3CommonDEBUG_x64.lib;PhysX3CookingDEBUG_x64.lib;PhysX3ExtensionsDEBUG.lib;PhysXProfileSDKDEBUG.lib;PhysXVisualDebuggerSDKDEBUG.lib;PhysX3CharacterKinematicDEBUG_x64.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Guid.lib;$(QT_5_7_MSVC2015_64)\lib\qtmaind.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Widgetsd.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)engine\libraries\autodesk_fbx\libs\$(Configuration);$(SolutionDir)engine\libraries\networking\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,6 +139,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>$(SolutionDir)bin\x64\Release\engine.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3d12.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\dxgi.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3dcompiler.lib;libfbxsdk.lib;PhysX3_x64.lib;PhysX3Common_x64.lib;PhysX3Cooking_x64.lib;PhysX3Extensions.lib;PhysXProfileSDK.lib;PhysX3CharacterKinematic_x64.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Gui.lib;$(QT_5_7_MSVC2015_64)\lib\qtmain.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Widgets.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)engine\libraries\autodesk_fbx\libs\$(Configuration);$(SolutionDir)engine\libraries\networking\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

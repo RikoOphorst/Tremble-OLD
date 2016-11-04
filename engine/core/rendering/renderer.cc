@@ -28,10 +28,12 @@
 #include "shader.h"
 #include "texture.h"
 #include "graphics.h"
+#include "shaders\default_ps.h"
+#include "shaders\default_vs.h"
+#include "shaders\debug_default_ps.h"
+#include "shaders\debug_default_vs.h"
 
 #define SWAP_CHAIN_BUFFER_COUNT 2
-
-bool draw_goblin = true;
 
 namespace engine
 {
@@ -84,11 +86,15 @@ namespace engine
 		CreateDepthStencilView();
 		CreateSamplerDescs();
 
-		vertex_shader_ = Get::ResourceManager()->GetShader("../../shaders/test_shader.hlsl", Shader::ShaderTypeVertex);
-		pixel_shader_ = Get::ResourceManager()->GetShader("../../shaders/test_shader.hlsl", Shader::ShaderTypePixel);
+		vertex_shader_ = new Shader();
+		vertex_shader_->CreateFromByteCode(shader_default_vs, _countof(shader_default_vs));
+		pixel_shader_ = new Shader();
+		pixel_shader_->CreateFromByteCode(shader_default_ps, _countof(shader_default_ps));
 
-		debug_vertex_shader_ = Get::ResourceManager()->GetShader("../../shaders/debug_shader.hlsl", Shader::ShaderTypeVertex);
-		debug_pixel_shader_ = Get::ResourceManager()->GetShader("../../shaders/debug_shader.hlsl", Shader::ShaderTypePixel);
+		debug_vertex_shader_ = new Shader();
+		debug_vertex_shader_->CreateFromByteCode(shader_debug_default_vs, _countof(shader_debug_default_vs));
+		debug_pixel_shader_ = new Shader();
+		debug_pixel_shader_->CreateFromByteCode(shader_debug_default_ps, _countof(shader_debug_default_ps));
 
 		CreateFrameResources();
 

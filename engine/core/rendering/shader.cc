@@ -151,6 +151,13 @@ namespace engine
 			shaders_created++;
 		}
 	}
+
+	//------------------------------------------------------------------------------------------------------
+	void Shader::CreateFromByteCode(const BYTE byte_code[], UINT byte_code_size)
+	{
+		shader_byte_code_.pShaderBytecode = byte_code;
+		shader_byte_code_.BytecodeLength = byte_code_size;
+	}
 	
 	//------------------------------------------------------------------------------------------------------
 	void Shader::Reload()

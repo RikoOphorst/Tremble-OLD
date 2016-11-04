@@ -20,6 +20,7 @@ namespace engine
 
 		void CompileFromFile(const std::string& shader_path, ShaderType shader_type);
 		void CompileFromSource(const std::string& shader_code, ShaderType shader_type);
+		void CreateFromByteCode(const BYTE byte_code[], UINT byte_code_size);
 
 		void Reload();
 		
