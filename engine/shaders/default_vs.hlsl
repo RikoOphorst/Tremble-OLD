@@ -25,9 +25,11 @@ VertexOut main(VertexIn vin)
 {
     VertexOut vout;
 
-    vout.PosH = mul(float4(vin.PosL, 1.0f), gWorldViewProj);
+    float4 pos = float4(vin.PosL, 1.0f);
+
+    vout.PosH = mul(pos, gWorldViewProj);
     vout.Color = vin.Color;
-    vout.PosW = mul(float4(vin.PosL, 1.0f), gWorld);
+    vout.PosW = mul(pos, gWorld);
     vout.UV = vin.UV;
     vout.Normal = mul(vin.Normal, (float3x3) gWorld);
     vout.Bitangent = mul(vin.Bitangent, (float3x3) gWorld);
