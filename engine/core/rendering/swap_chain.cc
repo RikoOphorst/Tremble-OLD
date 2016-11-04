@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "swap_chain.h"
 
 #include "renderer.h"

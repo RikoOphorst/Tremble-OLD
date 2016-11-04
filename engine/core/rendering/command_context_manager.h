@@ -1,8 +1,6 @@
 #pragma once
 
-#include <vector>
-#include <queue>
-#include "direct3d.h"
+#include "../../pch.h"
 
 namespace engine
 {

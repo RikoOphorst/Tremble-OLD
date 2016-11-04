@@ -4,8 +4,7 @@
 #define INLINE __forceinline
 #endif
 
-#include <DirectXMath.h>
-#include <PxPhysicsAPI.h>
+#include "pch.h"
 
 #include "../ivector3.h"
 #include "vector4.h"

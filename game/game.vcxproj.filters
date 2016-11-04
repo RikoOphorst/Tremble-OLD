@@ -2,9 +2,16 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cc" />
-    <ClCompile Include="components\flying.cc" />
-    <ClCompile Include="components\player.cc" />
-    <ClCompile Include="components\raycast_shooting.cc" />
+    <ClCompile Include="pch.cc" />
+    <ClCompile Include="components\flying.cc">
+      <Filter>components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\player.cc">
+      <Filter>components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\raycast_shooting.cc">
+      <Filter>components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="components">
@@ -12,10 +19,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="components\player.h" />
-    <ClInclude Include="components\raycast_shooting.h" />
-    <ClInclude Include="components\flying.h" />
-    <ClInclude Include="components\rotate.h" />
-    <ClInclude Include="components\output_position_and_rotation.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="components\flying.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\player.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\raycast_shooting.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\rotate.h">
+      <Filter>components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\output_position_and_rotation.h">
+      <Filter>components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,5 @@
 #pragma once
-#include "engine\engine_include.h"
-#include <DirectXMath.h>
+#include "pch.h"
 
 namespace engine
 {
@@ -51,7 +50,7 @@ namespace engine
 				camera_pitch += Scalar(keys_rotation_speed_ * 100 * Get::DeltaT());
 			}
 			//clamp camera to 90/-70
-			camera_pitch = max(-1.22173f, min(camera_pitch, 1.5708f));
+			camera_pitch = std::max((float)-1.22173f, std::min((float)camera_pitch, 1.5708f));
 			camera_node_->SetRotationRadians(Vector3(camera_pitch, Scalar(0.0f), Scalar(0.0f)));
 			if (Get::InputManager()->GetKeyDown(TYPE_KEY_NUMPAD4))
 			{

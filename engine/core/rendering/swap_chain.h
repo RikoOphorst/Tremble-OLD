@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
+#include "../../pch.h"
 #include "color_buffer.h"
 
 #define SWAP_CHAIN_MAX_BUFFER_COUNT 3

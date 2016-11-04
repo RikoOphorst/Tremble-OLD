@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "fbx_loader.h"
 
 #include "../../components/rendering/renderable.h"
@@ -8,7 +9,6 @@
 #include "../resources/resource_manager.h"
 #include "../rendering/material.h"
 #include "../get.h"
-#include <fbxsdk.h>
 
 namespace engine
 {

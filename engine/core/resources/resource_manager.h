@@ -1,9 +1,8 @@
 #pragma once
-#include <unordered_map>
-#include <vector>
+
+#include "pch.h"
 #include "mesh.h"
 #include "../rendering/shader.h"
-#include "fbxsdk.h"
 
 namespace engine
 {

@@ -1,7 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
-#include "wincodec.h"
+#include "../../pch.h"
 #include "../win32/wic_loader.h"
 #include "gpu_resource.h"
 

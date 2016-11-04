@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "component_manager.h"
 #include "../../components/physics/physics_rigidbody_component.h"
 

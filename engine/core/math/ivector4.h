@@ -4,7 +4,7 @@
 #define INLINE __forceinline
 #endif
 
-#include <string>
+#include "pch.h"
 
 namespace engine
 {

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "obj_loader.h"
 #include "tiny_obj_loader.h"
 

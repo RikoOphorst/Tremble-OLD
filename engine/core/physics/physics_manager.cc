@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "physics_manager.h"
 
 #include "../memory/memory_includes.h"
@@ -10,20 +11,20 @@ namespace engine
 	using namespace physx;
 
 	//------------------------------------------------------------------------------------------------------
-	PhysicsManager::AllocatorCallback::AllocatorCallback(FreeListAllocator * physx_allocator)
+	PhysicsManager::AllocatorCallback::AllocatorCallback(FreeListAllocator* physx_allocator)
 		:physx_allocator_(physx_allocator)
 	{
 	
 	}
 
 	//------------------------------------------------------------------------------------------------------
-	void * PhysicsManager::AllocatorCallback::allocate(size_t size, const char * typeName, const char * filename, int line)
+	void * PhysicsManager::AllocatorCallback::allocate(size_t size, const char* typeName, const char* filename, int line)
 	{
 		return physx_allocator_->Allocate(size, 16);
 	}
 
 	//------------------------------------------------------------------------------------------------------
-	void PhysicsManager::AllocatorCallback::deallocate(void * ptr)
+	void PhysicsManager::AllocatorCallback::deallocate(void* ptr)
 	{
 		if (ptr != nullptr)
 		{
@@ -32,7 +33,7 @@ namespace engine
 	}
 
 	//------------------------------------------------------------------------------------------------------
-	void PhysicsManager::ErrorCallback::reportError(physx::PxErrorCode::Enum code, const char * message, const char * file, int line)
+	void PhysicsManager::ErrorCallback::reportError(physx::PxErrorCode::Enum code, const char* message, const char* file, int line)
 	{
 		std::cout << "PhysX Error: " << message << std::endl;
 	}
@@ -77,7 +78,7 @@ namespace engine
 	}
 
 	//------------------------------------------------------------------------------------------------------
-	void PhysicsManager::Delete(PhysicsManager * to_delete)
+	void PhysicsManager::Delete(PhysicsManager* to_delete)
 	{
 		to_delete->Shutdown();
 		FreeListAllocator* allocator = to_delete->px_allocator_;
@@ -86,7 +87,7 @@ namespace engine
 	}
 
 	//------------------------------------------------------------------------------------------------------
-	PhysicsManager::PhysicsManager(FreeListAllocator * created_allocator)
+	PhysicsManager::PhysicsManager(FreeListAllocator* created_allocator)
 		:allocator_callback_(created_allocator), px_allocator_(created_allocator)
 	{
 		

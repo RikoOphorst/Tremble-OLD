@@ -1,9 +1,5 @@
+#include "pch.h"
 #include "mesh.h"
-
-#include <map>
-#include <sstream>
-#include <iostream>
-#include <utility>
 
 #include "../rendering/renderer.h"
 #include "../utilities/utilities.h"

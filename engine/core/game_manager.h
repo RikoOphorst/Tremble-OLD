@@ -1,15 +1,7 @@
 #pragma once
-#define _WINSOCK2API_
-#define _WINSOCKAPI_   /* Prevent inclusion of winsock.h in windows.h */
-#include <Windows.h>
-#undef _WINSOCK2API_
-#undef _WINSOCKAPI_
-#include <string>
-#include <functional>
+#include "pch.h"
 #include "utilities\utilities.h"
 #include "config/config_manager.h"
-
-#include "PxPhysicsAPI.h"
 
 namespace engine
 {

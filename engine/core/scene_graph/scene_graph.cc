@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "scene_graph.h"
 #include "../utilities/debug.h"
 #include "../game_manager.h"

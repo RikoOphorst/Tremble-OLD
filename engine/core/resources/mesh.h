@@ -1,7 +1,6 @@
 #pragma once
 
-#include <vector>
-#include "../rendering/direct3d.h"
+#include "../../pch.h"
 #include "../rendering/vertex.h"
 #include "../rendering/structured_buffer.h"
 #include "../rendering/byte_address_buffer.h"

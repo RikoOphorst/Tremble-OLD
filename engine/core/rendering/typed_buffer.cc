@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "typed_buffer.h"
 
 #include "descriptor_heap.h"

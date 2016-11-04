@@ -194,24 +194,6 @@
     <ClInclude Include="components\physics\rigidbody_dynamic.h">
       <Filter>core\physics</Filter>
     </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\utilities\pico_json.h">
-      <Filter>core\utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\config\design\config_design.h">
-      <Filter>core\config\design</Filter>
-    </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\config\config.h">
-      <Filter>core\config</Filter>
-    </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\config\config_parser.h">
-      <Filter>core\config</Filter>
-    </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\config\config_manager.h">
-      <Filter>core\config</Filter>
-    </ClInclude>
-    <ClInclude Include="I:\Y22016A-Team13\engine\core\config\resolution.h">
-      <Filter>core\config</Filter>
-    </ClInclude>
     <ClInclude Include="core\rendering\command_queue.h">
       <Filter>core\rendering</Filter>
     </ClInclude>
@@ -281,6 +263,25 @@
     <ClInclude Include="components\physics\plane.h">
       <Filter>components\physics</Filter>
     </ClInclude>
+    <ClInclude Include="I:\Y22016A-Team13\engine\core\utilities\pico_json.h">
+      <Filter>core\utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="core\config\config_parser.h">
+      <Filter>core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="core\config\resolution.h">
+      <Filter>core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="core\config\config_manager.h">
+      <Filter>core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="core\config\config.h">
+      <Filter>core\config</Filter>
+    </ClInclude>
+    <ClInclude Include="core\config\design\config_design.h">
+      <Filter>core\config\design</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\game_manager.cc">
@@ -418,12 +419,6 @@
     <ClCompile Include="components\physics\rigidbody_dynamic.cc">
       <Filter>core\physics</Filter>
     </ClCompile>
-    <ClCompile Include="I:\Y22016A-Team13\engine\core\config\config_parser.cc">
-      <Filter>core\config</Filter>
-    </ClCompile>
-    <ClCompile Include="I:\Y22016A-Team13\engine\core\config\config_manager.cc">
-      <Filter>core\config</Filter>
-    </ClCompile>
     <ClCompile Include="core\rendering\command_queue.cc">
       <Filter>core\rendering</Filter>
     </ClCompile>
@@ -487,6 +482,16 @@
     <ClCompile Include="components\physics\plane.cc">
       <Filter>components\physics</Filter>
     </ClCompile>
+    <ClCompile Include="core\config\config_parser.cc">
+      <Filter>core\config</Filter>
+    </ClCompile>
+    <ClCompile Include="core\config\config_manager.cc">
+      <Filter>core\config</Filter>
+    </ClCompile>
+    <ClCompile Include="core\config\config_manager_moc.cpp">
+      <Filter>core\config</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cc" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="core">
@@ -543,5 +548,34 @@
     <Filter Include="components\raycast_shooting">
       <UniqueIdentifier>{4a1e388b-6b62-4ed6-b7d8-6be9c414df0f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{9c8dd8b9-b7c3-4bf8-a20a-528cbde07532}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\bin\shaders\lights.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\material.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\samplers.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\test_shader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\vertex_data.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\cbuffers.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\debug_shader.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="..\bin\shaders\lighting.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

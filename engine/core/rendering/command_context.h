@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
+#include "../../pch.h"
 #include "gpu_resource.h"
 #include "gpu_buffer.h"
 #include "structured_buffer.h"

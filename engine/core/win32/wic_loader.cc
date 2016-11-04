@@ -1,7 +1,5 @@
+#include "pch.h"
 #include "wic_loader.h"
-
-#include <locale>
-#include <codecvt>
 
 namespace engine
 {

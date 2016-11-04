@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "rigidbody_static.h"
 
 #include "../../core/get.h"

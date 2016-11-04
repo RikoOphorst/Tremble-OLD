@@ -1,7 +1,6 @@
 #pragma once
 
-#include <vector>
-#include <DirectXMath.h>
+#include "pch.h"
 #include "../game_manager.h"
 #include "component_manager.h"
 #include "../../components/rendering/renderable.h"

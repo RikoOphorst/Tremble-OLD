@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "light.h"
 
 #include "../../core/scene_graph/scene_graph.h"

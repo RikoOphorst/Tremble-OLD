@@ -1,15 +1,13 @@
 #pragma once
+
+#include "pch.h"
 #define _WINSOCK2API_
 #define _WINSOCKAPI_   /* Prevent inclusion of winsock.h in windows.h */
 #include <Windows.h>
 #undef _WINSOCK2API_
 #undef _WINSOCKAPI_
-#include <string>
-#include <functional>
 #include "key.h"
 #include "mouse.h"
-#include <unordered_map>
-#include <queue>
 
 namespace engine
 {

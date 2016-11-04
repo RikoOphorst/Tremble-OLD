@@ -1,10 +1,10 @@
 #pragma once
 
+#include "pch.h"
+
 #ifndef INLINE
 #define INLINE __forceinline
 #endif
-
-#include <string>
 
 namespace engine
 {

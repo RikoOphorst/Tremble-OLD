@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "frame_resource.h"
 
 #include "dynamic_upload_buffer.h"

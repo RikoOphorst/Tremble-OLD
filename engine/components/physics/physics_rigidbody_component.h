@@ -1,7 +1,7 @@
 #pragma once
 
+#include "pch.h"
 #include "../../core/scene_graph/component.h"
-#include <PxPhysicsAPI.h>
 #include "../../core/game_manager.h"
 #include "../../core/scene_graph/component_manager.h"
 #include "../../core/get.h"

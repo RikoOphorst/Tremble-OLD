@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "texture.h"
 
 #include "../win32/wic_loader.h"

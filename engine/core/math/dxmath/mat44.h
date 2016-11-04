@@ -4,10 +4,9 @@
 #define INLINE __forceinline
 #endif
 
-#include <DirectXMath.h>
-#include <PxPhysicsAPI.h>
+#include "pch.h"
 
-#include "../iMat44.h"
+#include "../imat44.h"
 #include "scalar.h"
 #include "vector4.h"
 #include "vector3.h"

@@ -1,9 +1,7 @@
 #pragma once
 #include "../../utilities/utilities.h"
 
-#ifdef _DEBUG
-#include <bitset>
-#endif
+#include "pch.h"
 
 //#include <new>
 

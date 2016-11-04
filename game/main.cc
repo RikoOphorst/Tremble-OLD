@@ -1,7 +1,5 @@
-#include "engine\engine_include.h"
+#include "pch.h"
 
-#include <iostream>
-#include <type_traits>
 #include "components\player.h"
 #include "components\flying.h"
 #include "components\rotate.h"
@@ -177,6 +175,7 @@ int main(int argc, char* argv)
 	{
 		Flying* flying = player->AddComponent<Flying>();
 	}
+
 
 
 

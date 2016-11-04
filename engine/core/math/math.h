@@ -9,12 +9,12 @@
 //
 //#if USED_MATH_LIB == MATH_LIB_DXMATH
 
+#include "pch.h"
 #include "dxmath/vector3.h"
 #include "dxmath/vector4.h"
 #include "dxmath/scalar.h"
 #include "dxmath/mat44.h"
 #include "dxmath/quaternion.h"
-#include <DirectXMath.h>
 
 //#elif USED_MATH_LIB == MATH_LIB_PXMATH
 //

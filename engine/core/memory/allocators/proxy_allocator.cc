@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "proxy_allocator.h"
 
 namespace engine

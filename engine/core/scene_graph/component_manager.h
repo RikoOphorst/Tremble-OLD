@@ -1,10 +1,7 @@
 #pragma once
 
-#include <typeindex>
-#include <map>
-#include <unordered_map>
+#include "pch.h"
 #include "component_vector.h"
-#include <PxPhysicsAPI.h>
 
 namespace engine
 {

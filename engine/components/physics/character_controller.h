@@ -1,6 +1,6 @@
 #pragma once
 
-#include <PxPhysicsAPI.h>
+#include "pch.h"
 #include "../../core/scene_graph/component.h"
 
 namespace engine

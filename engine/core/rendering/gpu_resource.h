@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
+#include "../../pch.h"
 
 #define D3D12_RESOURCE_STATE_INVALID ((D3D12_RESOURCE_STATES)-1)
 

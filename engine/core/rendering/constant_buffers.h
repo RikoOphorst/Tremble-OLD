@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
+#include "../../pch.h"
 #include "../../components/rendering/light.h"
 
 namespace engine

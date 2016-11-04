@@ -1,9 +1,6 @@
 #pragma once
 
-#include <wincodec.h>
-#include <string>
-
-#include "../rendering/direct3d.h"
+#include "../../pch.h"
 
 namespace engine
 {

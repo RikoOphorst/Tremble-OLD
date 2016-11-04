@@ -1,6 +1,6 @@
 #pragma once
 
-#include <typeindex>
+#include "pch.h"
 #include "../math/math.h"
 #include "../../core/get.h"
 

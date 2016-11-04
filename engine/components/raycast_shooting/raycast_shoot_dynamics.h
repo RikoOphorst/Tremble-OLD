@@ -1,11 +1,11 @@
 #pragma once
+
+#include "pch.h"
 #include "../engine/core/scene_graph/component.h"
 #include "../engine/core/scene_graph/scene_graph.h"
 #include "../engine/core/physics/physics_manager.h"
 #include "../physics/rigidbody_dynamic.h"
 #include "../engine/core/input/input_manager.h"
-
-#include <PxPhysicsAPI.h>
 
 namespace engine
 {

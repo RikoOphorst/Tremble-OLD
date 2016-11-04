@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../rendering/direct3d.h"
+#include "../../pch.h"
 #include "../math/math.h"
 #include "resolution.h"
 

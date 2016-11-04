@@ -1,14 +1,5 @@
+#include "pch.h"
 #include "renderer.h"
-#include "renderer.h"
-#include "renderer.h"
-#include "renderer.h"
-#include "renderer.h"
-#include "renderer.h"
-
-#include <string>
-#include <locale>
-#include <codecvt>
-#include <iomanip>
 
 #include "command_context_manager.h"
 #include "command_manager.h"

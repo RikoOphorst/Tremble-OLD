@@ -1,8 +1,5 @@
+#include "pch.h"
 #include "config_parser.h"
-
-#include <fstream>
-#define PICOJSON_USE_INT64
-#include "../utilities/pico_json.h"
 
 namespace engine
 {

@@ -1,7 +1,6 @@
 #pragma once
 
-#include <DirectXMath.h>
-#include <DirectXCollision.h>
+#include "pch.h"
 
 #include "../../core/scene_graph/component.h"
 

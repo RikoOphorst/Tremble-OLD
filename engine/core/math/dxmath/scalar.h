@@ -6,9 +6,8 @@
 #define INLINE __forceinline
 #endif
 
-#include <DirectXMath.h>
+#include "pch.h"
 #include "../iscalar.h"
-#include <algorithm>
 
 namespace engine
 {

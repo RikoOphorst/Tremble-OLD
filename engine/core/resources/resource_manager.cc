@@ -1,10 +1,11 @@
-#include "fbxsdk.h"
+#include "pch.h"
 #include "resource_manager.h"
+
 #include "mesh.h"
-#include "../rendering/texture.h"
-#include "../rendering/material.h"
 #include "obj_loader.h"
 #include "fbx_loader.h"
+#include "../rendering/texture.h"
+#include "../rendering/material.h"
 #include "../memory/memory_includes.h"
 #include "../game_manager.h"
 

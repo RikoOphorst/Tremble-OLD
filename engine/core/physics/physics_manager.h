@@ -1,7 +1,7 @@
 #pragma once
 #include "../utilities/debug.h"
 
-#include "PxPhysicsAPI.h"
+#include "pch.h"
 
 namespace engine
 {

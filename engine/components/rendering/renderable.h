@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../../core/rendering/direct3d.h"
+#include "pch.h"
 #include "../../core/scene_graph/component.h"
-#include <iostream>
 
 namespace engine
 {

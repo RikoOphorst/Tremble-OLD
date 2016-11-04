@@ -1,8 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
-
-#include <string>
+#include "../../pch.h"
 
 namespace engine
 {

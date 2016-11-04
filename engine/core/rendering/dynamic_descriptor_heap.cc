@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "dynamic_descriptor_heap.h"
 
 #include "../utilities/utilities.h"

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "design/config_design.h"
-#include "../rendering/direct3d.h"
+#include "../../pch.h"
 #include "../math/math.h"
+#include "design/config_design.h"
 #include "config.h"
 
 namespace engine

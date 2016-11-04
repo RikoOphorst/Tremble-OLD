@@ -1,7 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
-#include <vector>
+#include "../../pch.h"
 
 #define ROOT_SIGNATURE_MAX_PARAMETERS 64
 #define ROOT_SIGNATURE_MAX_STATIC_SAMPLERS 64

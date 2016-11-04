@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "pixel_buffer.h"
 
 #include "renderer.h"

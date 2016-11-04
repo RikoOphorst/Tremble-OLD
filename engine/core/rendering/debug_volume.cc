@@ -1,6 +1,5 @@
+#include "pch.h"
 #include "debug_volume.h"
-
-#include <cmath>
 
 #include "../resources/mesh.h"
 #include "../math/math.h"

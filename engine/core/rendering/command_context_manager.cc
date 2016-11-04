@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "command_context_manager.h"
 
 #include "command_context.h"

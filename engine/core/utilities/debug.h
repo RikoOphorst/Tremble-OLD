@@ -1,13 +1,6 @@
 #pragma once
 
-#include <iostream>
-#define _WINSOCK2API_
-#define _WINSOCKAPI_   /* Prevent inclusion of winsock.h in windows.h */
-#include <Windows.h>
-#undef _WINSOCK2API_
-#undef _WINSOCKAPI_
-
-#include <assert.h>
+#include "pch.h"
 
 #define ASSERT assert
 

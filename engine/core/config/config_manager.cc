@@ -1,16 +1,8 @@
+#include "pch.h"
 #include "config_manager.h"
 
-#include <QtWidgets\qdesktopwidget.h>
-#include "config_manager.cpp"
-
-#include "../utilities/pico_json.h"
+#include "config_manager_moc.cpp"
 #include "config_parser.h"
-
-#include <codecvt>
-#include <io.h>
-#include <filesystem>
-#include <sstream>
-#include <fstream>
 
 using namespace std;
 using namespace std::tr2::sys;
@@ -46,7 +38,7 @@ namespace engine
 		FillSceneBox();
 
 		ConfigParser parser;
-		config_ = parser.Parse("../resources/config.cfg");
+		config_ = parser.Parse("../../config.cfg");
 
 		setup_dialog_->selection_gpu->setCurrentIndex(config_.adapter);
 		setup_dialog_->selection_window_resolution->setCurrentIndex(config_.window_resolution);
@@ -107,7 +99,7 @@ namespace engine
 		config_.frustum_culling = setup_dialog_->is_frustum_cullling->checkState() == Qt::CheckState::Checked;
 
 		ConfigParser parser;
-		parser.Serialize("../resources/config.cfg", config_);
+		parser.Serialize("../../config.cfg", config_);
 
 		delete setup_dialog_;
 		delete main_window_;
@@ -219,7 +211,7 @@ namespace engine
 	{
 		available_scenes_.resize(0);
 
-		std::string resource_path = "../resources/models/";
+		std::string resource_path = "../../models/";
 
 		for (recursive_directory_iterator i(resource_path), end; i != end; ++i)
 		{
@@ -341,7 +333,7 @@ namespace engine
 			setup_dialog_->selection_scene->removeItem(i);
 		}
 
-		std::string resource_path = "../resources/models/";
+		std::string resource_path = "../../models/";
 
 		for (int i = 0; i < available_scenes_.size(); i++)
 		{

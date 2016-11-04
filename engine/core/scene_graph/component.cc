@@ -1,10 +1,6 @@
+#include "pch.h"
 #include "component.h"
-#include "component.h"
-#include "component.h"
-#include "component.h"
-#include "component.h"
-#include "component.h"
-#include "component.h"
+
 #include "scene_graph.h"
 
 namespace engine

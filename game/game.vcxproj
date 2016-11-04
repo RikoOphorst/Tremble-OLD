@@ -70,12 +70,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>$(SolutionDir)dependencies\autodesk_fbx\lib\release;$(SolutionDir)dependencies\physx\lib;%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LibraryPath>$(SolutionDir)dependencies\autodesk_fbx\lib\release;$(SolutionDir)dependencies\physx\lib;%(AdditionalLibraryDirectories);$(LibraryPath)</LibraryPath>
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,9 +93,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\;$(SolutionDir)dependencies\autodesk_fbx\include;$(SolutionDir)dependencies\physx\include;$(SolutionDir)dependencies\qt\5.7\msvc2015_64\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;$(SolutionDir)dependencies\autodesk_fbx\include;$(SolutionDir)dependencies\physx\include;$(SolutionDir)dependencies\qt\5.7\msvc2015_64\include;$(ProjectDir)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SolutionDir)bin\x64\Debug\engine.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3d12.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\dxgi.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\dxguid.lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.14393.0\um\x64\d3dcompiler.lib;libfbxsdk.lib;PhysX3DEBUG_x64.lib;PhysX3CommonDEBUG_x64.lib;PhysX3CookingDEBUG_x64.lib;PhysX3ExtensionsDEBUG.lib;PhysXProfileSDKDEBUG.lib;PhysXVisualDebuggerSDKDEBUG.lib;PhysX3CharacterKinematicDEBUG_x64.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Guid.lib;$(QT_5_7_MSVC2015_64)\lib\qtmaind.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Widgetsd.lib;$(QT_5_7_MSVC2015_64)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -125,9 +127,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\;$(SolutionDir)dependencies\autodesk_fbx\include;$(SolutionDir)dependencies\physx\include;$(SolutionDir)dependencies\qt\5.7\msvc2015_64\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\;$(SolutionDir)dependencies\autodesk_fbx\include;$(SolutionDir)dependencies\physx\include;$(SolutionDir)dependencies\qt\5.7\msvc2015_64\include;$(ProjectDir)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -141,6 +145,10 @@
     <ClCompile Include="components\player.cc" />
     <ClCompile Include="components\raycast_shooting.cc" />
     <ClCompile Include="main.cc" />
+    <ClCompile Include="pch.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\flying.h" />
@@ -148,6 +156,7 @@
     <ClInclude Include="components\player.h" />
     <ClInclude Include="components\raycast_shooting.h" />
     <ClInclude Include="components\rotate.h" />
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "direct3d.h"
+#include "../../pch.h"
 #include "gpu_resource.h"
 
 namespace engine

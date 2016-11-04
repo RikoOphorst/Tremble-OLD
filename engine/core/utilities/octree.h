@@ -1,9 +1,6 @@
 #pragma once
 
-#include <DirectXMath.h>
-#include <DirectXCollision.h>
-#include <vector>
-#include <queue>
+#include "pch.h"
 
 namespace engine
 {

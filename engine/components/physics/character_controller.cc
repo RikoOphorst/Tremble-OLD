@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "character_controller.h"
 #include "../../core/get.h"
 #include "../../core/physics/physics_manager.h"
