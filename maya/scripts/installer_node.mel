@@ -1,0 +1,98 @@
+global string $tools_folder = "I:/Y22016A-Team13/maya";
+global string $tools_folder_field = "";
+global string $window;
+
+global proc create_ui()
+{
+	global string $tools_folder;
+	global string $tools_folder_field;
+	global string $window;
+
+	// Remove existing install windows
+	if (`window -exists $window`) destroy_ui();
+
+	// Create a new window
+	$window = `window -title "Install Editor Tools" -width 300 -height 180 -sizeable 0 -titleBarMenu 0`;
+
+		// Define the layout 
+		string $form_layout = `formLayout -width 300 -height 180`;
+			// Create label
+			string $tools_folder_label = `text -label "Editor tools folder:" -w 300`;
+
+			// Create text field
+			$tools_folder_field = `textField -text $tools_folder -w 282`;
+
+			// Create buttons
+			string $browse_button = `button -label "Browse" -command "browse" -w 135 -h 50`;
+			string $install_button = `button -label "Install" -command "install" -w 135 -h 50`;
+			string $cancel_button = `button -label "Cancel" -command "cancel" -w 280 -h 50`;
+
+		// Attach ui items to the formLayout
+		formLayout -edit
+			-attachForm $tools_folder_label "top" 10
+
+			-attachForm $tools_folder_field "top" 30
+			-attachForm $tools_folder_field "left" 10
+
+			-attachForm $browse_button "top" 60
+			-attachForm $browse_button "left" 10
+
+			-attachForm $install_button "top" 60
+			-attachForm $install_button "right" 10
+
+			-attachForm $cancel_button "top" 120
+			-attachForm $cancel_button "left" 10
+			$form_layout;
+
+	// Show the window
+	showWindow $window;
+}
+
+global proc browse()
+{
+	global string $tools_folder;
+	global string $tools_folder_field;
+	string $result[] = `fileDialog2 -caption "Select tools folder" -fileMode 3 -dialogStyle 2`;
+	$tools_folder = $result[0];
+	textField -edit -text $tools_folder $tools_folder_field;
+}
+
+global proc install()
+{
+	global string $tools_folder_field;
+
+	// Get current textfield value
+	string $tools_folder = `textField -query -text $tools_folder_field`;
+
+	set_paths($tools_folder);
+	python_install();
+}
+
+global proc cancel()
+{
+	global string $window;
+	deleteUI -window $window;
+}
+
+global proc set_paths(string $tools_folder)
+{
+	python("import sys");
+	python("sys.path.append(\"" + $tools_folder + "/scripts\")");
+	workspace -dir $tools_folder;
+}
+
+global proc python_install()
+{
+	global string $window;
+	python("import install_tools");
+	python("install_tools.install_tools()");
+	destroy_ui();
+}
+
+global proc destroy_ui()
+{
+	global string $window;
+	deleteUI -window $window;
+}
+
+create_ui();

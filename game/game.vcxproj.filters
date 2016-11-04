@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="components\flying.cc" />
+    <ClCompile Include="components\player.cc" />
+    <ClCompile Include="components\raycast_shooting.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="components">
+      <UniqueIdentifier>{1202a758-a2a4-4dd5-9ccd-f8c772c8a574}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="components\player.h" />
+    <ClInclude Include="components\raycast_shooting.h" />
+    <ClInclude Include="components\flying.h" />
+    <ClInclude Include="components\rotate.h" />
+    <ClInclude Include="components\output_position_and_rotation.h" />
+  </ItemGroup>
+</Project>

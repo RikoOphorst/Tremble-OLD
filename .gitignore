@@ -1,0 +1,16 @@
+*.tmp
+*.sdf
+*.opensdf
+*.obj
+*.idb
+*.exe
+*.tlog
+*.lastbuildstate
+unsuccessfulbuild
+*.ib_pdb_index
+doc
+*.iobj
+*.ipdb
+dependencies/
+bin/
+*.rar
