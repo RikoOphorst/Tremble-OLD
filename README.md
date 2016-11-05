@@ -4,8 +4,9 @@ Tremble is a game engine with support for DirectX 12. This engine is built by [@
 ###Key feature list:
 - Convenient GPU resource types such as structured buffers, color buffers, depth buffers
 - Handy descriptor management - no more dealing with descriptors, everything is done for you
-- Command list management optimized for ease of use - create a command list, record commands, submit the command list and sync the CPU/GPU **in less than 5 lines of codes**
+- Command list management optimized for ease of use - create a command list, record commands, submit the command list and sync the CPU/GPU **in less than 5 lines of code**
 - Offline shader compilation for fast loading times
+- High performance hierarchical view frustum culling
 - Extensive support for FBX loading
 - Fully fledged entity-component-system designed with ease of use in mind
 - Quick iteration times because of very fast compile times
