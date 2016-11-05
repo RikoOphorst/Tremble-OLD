@@ -4,8 +4,9 @@ Tremble is a game engine with support for DirectX 12. This engine is built by [@
 ###Key feature list:
 - Convenient GPU resource types such as structured buffers, color buffers, depth buffers
 - Handy descriptor management - no more dealing with descriptors, everything is done for you
-- Command list management optimized for ease of use - create a command list, record commands, submit the command list and sync the CPU/GPU **in less than 5 lines of codes**
+- Command list management optimized for ease of use - create a command list, record commands, submit the command list and sync the CPU/GPU **in less than 5 lines of code**
 - Offline shader compilation for fast loading times
+- High performance hierarchical view frustum culling
 - Extensive support for FBX loading
 - Fully fledged entity-component-system designed with ease of use in mind
 - Quick iteration times because of very fast compile times
@@ -18,4 +19,6 @@ Tremble is a game engine with support for DirectX 12. This engine is built by [@
 3. Download two rar files: [tremble-bin.rar](http://dependencies.rikoophorst.com/tremble-bin.rar) & [tremble-dependencies.rar](http://dependencies.rikoophorst.com/tremble-dependencies.rar)
 4. Unpack the rar files to the same folder where you cloned the repository
 5. Open **engine.sln** in **Visual Studio 2015**.
-6. Hit compile.
+6. Set the start-up project to the *game* project.
+7. Right click the game project -> Properties -> All Configurations -> Debugging -> Set *Working Directory* to *`$(OutDir)`*
+8. Hit compile.
