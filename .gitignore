@@ -21,3 +21,4 @@ bin/
 *.ib_tag
 *.pch
 *.ipch
+engine/shaders/*.h
