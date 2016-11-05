@@ -32,6 +32,8 @@
 #include "shaders\default_vs.h"
 #include "shaders\debug_default_ps.h"
 #include "shaders\debug_default_vs.h"
+#include "../../shaders/forward_rendering_vs.h"
+#include "../../shaders/forward_rendering_ps.h"
 
 #define SWAP_CHAIN_BUFFER_COUNT 2
 
@@ -87,9 +89,9 @@ namespace engine
 		CreateSamplerDescs();
 
 		vertex_shader_ = new Shader();
-		vertex_shader_->CreateFromByteCode(shader_default_vs, _countof(shader_default_vs));
+		vertex_shader_->CreateFromByteCode(shader_forward_rendering_vs, _countof(shader_forward_rendering_vs));
 		pixel_shader_ = new Shader();
-		pixel_shader_->CreateFromByteCode(shader_default_ps, _countof(shader_default_ps));
+		pixel_shader_->CreateFromByteCode(shader_forward_rendering_ps, _countof(shader_forward_rendering_ps));
 
 		debug_vertex_shader_ = new Shader();
 		debug_vertex_shader_->CreateFromByteCode(shader_debug_default_vs, _countof(shader_debug_default_vs));
@@ -239,7 +241,36 @@ namespace engine
 
 		ProcessPendingRenderables();
 
-		ConstantsHelper::UpdatePassConstants(pass_constants_, DirectX::XMFLOAT2((float)swap_chain_.GetBufferWidth(), (float)swap_chain_.GetBufferHeight()), timer, camera_, lights_);
+		LightConstants light_constants[64];
+
+		for (int i = 0; i < 64; i++)
+		{
+			if (i < lights_.size())
+			{
+				Light& l = *(lights_[i]);
+				LightConstants& c = light_constants[i];
+				c.position_world = Vector4(l.GetPosition(), 1.0f);
+				c.direction_world = l.GetDirection();
+				DirectX::XMStoreFloat4(&c.position_view, DirectX::XMVector4Transform(Vector4(l.GetPosition(), 1.0f), camera_->GetView()));
+				DirectX::XMStoreFloat4(&c.direction_view, DirectX::XMVector4Transform(l.GetDirection().ToDxVec(), camera_->GetView()));
+				c.color = l.GetColor();
+				c.spot_light_angle = 30.0f;
+				c.range = l.GetFalloffEnd();
+				c.intensity = 1.0f;
+				c.enabled = 1;
+				c.selected = 0;
+				c.type = l.GetLightType();
+				c.padding[0] = c.padding[1] = 0.0f;
+			}
+			else
+			{
+				light_constants[i].enabled = 0;
+			}
+		}
+
+		CommandContext::InitializeBuffer(BufferManager::GetBuffer(StructuredBufferLights), light_constants, 64 * sizeof(LightConstants), false, 0);
+
+		ConstantsHelper::UpdatePassConstants(pass_constants_, DirectX::XMFLOAT2((float)swap_chain_.GetBufferWidth(), (float)swap_chain_.GetBufferHeight()), timer, camera_);
 		ConstantsHelper::UpdateMaterialConstants(material_constants_, materials_);
 
 		context.SetRenderTarget(swap_chain_.GetBackBuffer().GetRTV(), depth_buffer_.GetDSV());
@@ -313,6 +344,7 @@ namespace engine
 		context.SetPipelineState(GraphicsPSO::Get("default_renderable_draw"));
 
 		context.SetConstantBuffer(1, pass_constants_->GetAddressById(0));
+		context.SetBufferSRV(3, BufferManager::GetBuffer(StructuredBufferLights));
 
 		for (int i = 0; i < static_cast<int>(renderables.size()); i++)
 		{
@@ -323,34 +355,34 @@ namespace engine
 
 			if (mat != nullptr)
 			{
-				if (mat->use_emissive_map == true)
-				{
-					context.SetDescriptorTable(3, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->emissive_map->GetSRV()));
-				}
-
 				if (mat->use_ambient_map == true)
 				{
 					context.SetDescriptorTable(4, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->ambient_map->GetSRV()));
 				}
 
+				if (mat->use_emissive_map == true)
+				{
+					context.SetDescriptorTable(5, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->emissive_map->GetSRV()));
+				}
+
 				if (mat->use_diffuse_map == true)
 				{
-					context.SetDescriptorTable(5, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->diffuse_map->GetSRV()));
+					context.SetDescriptorTable(6, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->diffuse_map->GetSRV()));
 				}
 
 				if (mat->use_specular_map == true)
 				{
-					context.SetDescriptorTable(6, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->specular_map->GetSRV()));
+					context.SetDescriptorTable(7, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->specular_map->GetSRV()));
 				}
 
-				if (mat->use_shininess_map == true)
+				/*if (mat->use_shininess_map == true)
 				{
-					context.SetDescriptorTable(7, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->shininess_map->GetSRV()));
-				}
+					context.SetDescriptorTable(8, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->shininess_map->GetSRV()));
+				}*/
 
 				if (mat->use_normal_map == true)
 				{
-					context.SetDescriptorTable(8, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->normal_map->GetSRV()));
+					context.SetDescriptorTable(9, cbv_srv_uav_heap_.GetGPUDescriptorById(mat->normal_map->GetSRV()));
 				}
 			}
 

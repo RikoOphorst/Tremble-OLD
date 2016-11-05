@@ -565,6 +565,12 @@
     <FxCompile Include="shaders\debug_default_ps.hlsl">
       <Filter>shaders</Filter>
     </FxCompile>
+    <FxCompile Include="shaders\forward_rendering_vs.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="shaders\forward_rendering_ps.hlsl">
+      <Filter>shaders</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\cbuffers.hlsli">
@@ -583,6 +589,9 @@
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\samplers.hlsli">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\common_include.hlsli">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

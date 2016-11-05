@@ -9,6 +9,12 @@
 namespace engine
 {
 	//------------------------------------------------------------------------------------------------------
+	TypedBuffer::TypedBuffer() :
+		data_format_(DXGI_FORMAT_UNKNOWN)
+	{
+	}
+	
+	//------------------------------------------------------------------------------------------------------
 	TypedBuffer::TypedBuffer(DXGI_FORMAT format) :
 		data_format_(format)
 	{

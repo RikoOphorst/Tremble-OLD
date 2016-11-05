@@ -18,6 +18,7 @@ namespace engine
 		const UINT& GetUAV() const { return uav_id_; }
 		const UINT& GetSRV() const { return srv_id_; }
 		const D3D12_GPU_VIRTUAL_ADDRESS& GetRootCBV() const { return gpu_virtual_address_; }
+		D3D12_GPU_VIRTUAL_ADDRESS GetRootCBV() { return gpu_virtual_address_; }
 
 		D3D12_VERTEX_BUFFER_VIEW GetVertexBufferView(UINT offset, UINT size, UINT stride) const;
 		D3D12_VERTEX_BUFFER_VIEW GetVertexBufferView(UINT base_vertex_index = 0) const;

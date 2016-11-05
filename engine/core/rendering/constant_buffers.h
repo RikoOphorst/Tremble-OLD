@@ -13,6 +13,7 @@ namespace engine
 	struct ObjectConstants
 	{
 		DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
+		DirectX::XMMATRIX world_view = DirectX::XMMatrixIdentity();
 		DirectX::XMMATRIX world_view_projection = DirectX::XMMatrixIdentity();
 	};
 
@@ -32,29 +33,46 @@ namespace engine
 		float padding;
 		DirectX::XMFLOAT2 render_target_size;
 		DirectX::XMFLOAT2 inv_render_target_size;
-		float active_point_lights;
-		float active_directional_lights;
-		float active_spot_lights;
-		float active_dual_cone_spot_lights;
-		PointLight point_lights[16];
-		DirectionalLight directional_lights[16];
-		SpotLight spot_lights[16];
-		DualConeSpotLight dual_cone_spot_lights[16];
 	};
 
 	struct MaterialConstants
 	{
-		DirectX::XMFLOAT3 emissive;
-		int use_emissive_map;
-		DirectX::XMFLOAT3 diffuse;
-		int use_diffuse_map;
-		DirectX::XMFLOAT3 specular;
-		int use_specular_map;
-		DirectX::XMFLOAT3 ambient_reflectance;
-		int use_ambient_map;
-		float shininess;
-		int use_shininess_map;
-		int use_normal_map;
-		float padding;
+		DirectX::XMFLOAT4 global_ambient;
+		DirectX::XMFLOAT4 ambient_color;
+		DirectX::XMFLOAT4 emissive_color;
+		DirectX::XMFLOAT4 diffuse_color;
+		DirectX::XMFLOAT4 specular_color;
+		DirectX::XMFLOAT4 reflectance;
+		float opacity;
+		float specular_power;
+		float index_of_refraction;
+		bool has_ambient_texture;
+		bool has_emissive_texture;
+		bool has_diffuse_texture;
+		bool has_specular_texture;
+		bool has_specular_power_texture;
+		bool has_normal_texture;
+		bool has_bump_texture;
+		bool has_opacity_texture;
+		float bump_intensity;
+		float specular_scale;
+		float alpha_threshold;
+		float padding[2];
+	};
+
+	struct LightConstants
+	{
+		DirectX::XMFLOAT4 position_world;
+		DirectX::XMFLOAT4 direction_world;
+		DirectX::XMFLOAT4 position_view;
+		DirectX::XMFLOAT4 direction_view;
+		DirectX::XMFLOAT4 color;
+		float spot_light_angle;
+		float range;
+		float intensity;
+		uint32_t enabled;
+		uint32_t selected;
+		uint32_t type;
+		float padding[2];
 	};
 }

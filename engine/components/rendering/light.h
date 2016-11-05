@@ -45,10 +45,10 @@ namespace engine
 
 	enum LightType
 	{
-		LightTypePoint,
-		LightTypeDirectional,
-		LightTypeSpot,
-		LightTypeDualConeSpot
+		LightTypePoint = 1,
+		LightTypeDirectional = 0,
+		LightTypeSpot = 2,
+		LightTypeDualConeSpot = 3
 	};
 
 	class Light : public Component

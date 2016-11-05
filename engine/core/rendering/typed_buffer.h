@@ -7,6 +7,7 @@ namespace engine
 	class TypedBuffer : public GpuBuffer
 	{
 	public:
+		TypedBuffer();
 		TypedBuffer(DXGI_FORMAT format);
 		virtual void CreateDerivedViews() override;
 	private:

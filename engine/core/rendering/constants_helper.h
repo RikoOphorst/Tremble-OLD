@@ -22,8 +22,7 @@ namespace engine
 			UploadBuffer<PassConstants>* buffer,
 			const DirectX::XMFLOAT2& render_target_size,
 			Timer* timer,
-			Camera* camera,
-			const std::vector<Light*>& lights
+			Camera* camera
 		);
 
 		static void UpdateObjectConstants(

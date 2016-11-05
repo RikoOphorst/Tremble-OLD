@@ -216,16 +216,19 @@ namespace engine
 			alpha_blend.RenderTarget[0].SrcBlend = D3D12_BLEND_SRC_ALPHA;
 			blend_state_traditional_additive = alpha_blend;
 
-			root_signature_default.Create(9, 6);
+			root_signature_default.Create(12, 6);
 			root_signature_default[0].InitAsConstantBuffer(0);
 			root_signature_default[1].InitAsConstantBuffer(1);
 			root_signature_default[2].InitAsConstantBuffer(2);
-			root_signature_default[3].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);
-			root_signature_default[4].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 1);
-			root_signature_default[5].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 2);
-			root_signature_default[6].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 3);
-			root_signature_default[7].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 4);
-			root_signature_default[8].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 5);
+			root_signature_default[3].InitAsBufferSRV(8);
+			root_signature_default[4].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0);  // ambient
+			root_signature_default[5].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 1);  // emissive
+			root_signature_default[6].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 2);  // diffuse
+			root_signature_default[7].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 3);  // specular
+			root_signature_default[8].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 4);  // specularpower
+			root_signature_default[9].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 5);  // normal
+			root_signature_default[10].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 6); // bump
+			root_signature_default[11].InitAsDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 7); // opacity
 			root_signature_default.InitStaticSampler(0, sampler_point_wrap);
 			root_signature_default.InitStaticSampler(1, sampler_point_clamp);
 			root_signature_default.InitStaticSampler(2, sampler_linear_wrap);
